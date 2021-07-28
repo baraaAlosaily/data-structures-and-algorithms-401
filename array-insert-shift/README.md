@@ -2,7 +2,7 @@
 
 ## WhiteBoard
 
-![array-insert-shift](./img/new.jpg)
+![array-insert-shift](./img/new2.jpg)
 
 Code for virification
 
