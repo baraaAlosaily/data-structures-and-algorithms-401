@@ -2,7 +2,7 @@
 
 ## resubmit 
 
-## code challenge day 1 ()
+## code challenge day 1 (28/7/2021)
 
 ![new](./img/new2.jpg)
 
