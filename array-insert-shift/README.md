@@ -2,7 +2,7 @@
 
 ## WhiteBoard
 
-![array-insert-shift](./img/new.jpg)
+![array-insert-shift](./img/new2.jpg)
 
 Code for virification
 
@@ -12,23 +12,25 @@ import java.util.Arrays;
 public class MyMain {
     public static void main(String[] args) {
         int num=5;
-        int[]array={2,4,6,-8};
+        int[]array={1,2,3,4,6,8,6,1,5,10};
         int[] finalArray= insertShiftArray(array,num);
         for (int i=0;i<finalArray.length;i++){
             System.out.println("New Array is"+finalArray[i]+",");
         }
     }
     public static int[] insertShiftArray(int[]array,int num){
-
+        int lon=array.length/2;
 int newArray[]=new int[array.length+1];
-for(int i=0;i<array.length;i++){
-    newArray[i]=array[i];
+
+for(int i=0;i<lon;i++) {
+    newArray[i] = array[i];
+    newArray[lon]=num;
 }
-newArray[newArray.length-1]=num;
-        Arrays.sort(newArray);
-        for (int i=0;i<newArray.length;i++){
-            System.out.println(newArray[i]);
-        }
+for (int i=lon+1;i<array.length+1;i++){
+    newArray[i]=array[i-1];
+    System.out.println(newArray[i]);
+}
+
         return newArray;
     }
 }
