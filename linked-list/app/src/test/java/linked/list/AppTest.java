@@ -57,9 +57,9 @@ class AppTest {
         list3.insert(3);
         list3.insert(5);
         list3.insert(4);
-        assertEquals(15,list.head.data);
-        assertEquals(4,list2.head.data);
-        assertEquals(4,list3.head.data);
+        assertEquals(5,list.head.data);
+        assertEquals(3,list2.head.data);
+        assertEquals(3,list3.head.data);
     }
 
 }
