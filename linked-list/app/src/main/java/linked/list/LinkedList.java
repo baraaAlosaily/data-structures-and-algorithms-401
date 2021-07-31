@@ -6,11 +6,16 @@ public class LinkedList {
     //craete insert method that will used to insert value and return null
     public void insert(int data){
         Node node=new Node(data);
-        if (head!=null) {
-            node.next=head;
+        if (head==null) {
+            head=node;
+        }else {
+            Node current=head;
+            while (current.next!=null){
+                current=current.next;
+            }
+            current.next=node;
+
         }
-       head=node;
-        System.out.println(head.data);
     }
     //Create includes method that will examine value that insert if it is include in the linkedlist will return true if note will return false
     public boolean includes(int data){

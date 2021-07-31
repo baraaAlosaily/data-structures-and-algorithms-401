@@ -11,13 +11,13 @@ public class App {
     public static void main(String[] args) {
 //        System.out.println(new App().getGreeting());
 // ============Uncomment to test the functions===============
-//        LinkedList list=new LinkedList();
-////        list.insert(5);
-////        list.insert(10);
-////        list.insert(15);
-////        list.insert(20);
-////        list.insert(25);
-////        list.show();
-////        System.out.println(list.includes(5));
+        LinkedList list=new LinkedList();
+        list.insert(5);
+        list.insert(10);
+        list.insert(15);
+        list.insert(20);
+        list.insert(25);
+        list.show();
+        System.out.println(list.includes(5));
     }
 }
