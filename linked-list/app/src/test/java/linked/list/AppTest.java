@@ -26,8 +26,8 @@ class AppTest {
         list.insert(15);
         list.insert(20);
         list.insert(25);
-        assertEquals(25,list.head.data);
-        assertEquals("{25} -> {20} -> {15} -> {10} -> {5} -> Null",list.show());
+        assertEquals(5,list.head.data);
+        assertEquals("{5} -> {10} -> {15} -> {20} -> {25} -> Null",list.show());
     }
     //(test5)return true when finding a value within the linked list that exists
     //(test6)return false when searching for a value in the linked list that does not exist
