@@ -17,6 +17,32 @@ public class LinkedList {
 
         }
     }
+    /* Function to get the nth node from the last of a
+     linked list */
+    public int kthFromEnd(int var) {
+        int len = 0;
+        Node temp = head;
+
+        // 1) count the number of nodes in Linked List
+        while (temp != null) {
+            temp = temp.next;
+            len++;
+        }
+        // check if value of n is not more than length of
+        // the linked list
+        if (len <= var||var<0) {
+            System.out.println("The K is more,less,or negative number");
+            return -1;
+        }
+        temp = head;
+        // 2) get the (len-n+1)th node from the beginning
+        for (int i = 1; i < len - var ; i++) {
+            temp = temp.next;
+//            System.out.println(temp.data);
+        }
+        System.out.println(temp.data);
+        return temp.data;
+    }
     // Craete method that append add new int at the end of the added value
     public void append(int data){
         Node node=new Node(data);
@@ -38,16 +64,16 @@ public class LinkedList {
             node.next=current;
         }
         while (current.next!=null){
-        if (current.next.data==var) {
-            System.out.println(var);
-            Node node = new Node(data);
-            node.next=current.next;
+            if (current.next.data==var) {
+                System.out.println(var);
+                Node node = new Node(data);
+                node.next=current.next;
 //            System.out.println(node.data);
-            current.next=node;
+                current.next=node;
 //            System.out.println("Are you in");
-            break;
-        }
-        current=current.next;
+                break;
+            }
+            current=current.next;
         }
     }
     // Create metod that add int After certen item
@@ -72,13 +98,13 @@ public class LinkedList {
     public boolean includes(int data){
         Node node = head;
         while (node!=null){
-                if (node.data==data){
+            if (node.data==data){
 //                    System.out.println("true");
-                    return true;
-                }else {
+                return true;
+            }else {
 //                    System.out.println(node.data);
-                    node= node.next;
-                }
+                node= node.next;
+            }
 
         }
 //        System.out.println(node.next.data);
@@ -90,7 +116,7 @@ public class LinkedList {
         String print="";
         Node node=head;
         while (node.next!=null){
-         print=print+"{"+node.data+"} -> ";
+            print=print+"{"+node.data+"} -> ";
             node=node.next;
         }
         String print2;

@@ -5,7 +5,7 @@ public class Node {
     int var;
     int data;
     Node next;
-//Node constructor
+    //Node constructor
     public Node(int data) {
         this.data=data;
 

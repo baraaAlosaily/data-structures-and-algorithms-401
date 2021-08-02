@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c9aae75-15a1-4b9a-927b-6071b3547c57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linked/list/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/linked/list/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linked/list/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/linked/list/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linked/list/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/linked/list/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/linked/list/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/linked/list/AppTest.java" afterDir="false" />
+    <list default="true" id="1430a576-c3a9-4665-805c-986ab2aad5c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,28 +17,23 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
-  <component name="ProjectId" id="1w8yjYbF0iAX5xPxzX0A8kUdp7o" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="7c9aae75-15a1-4b9a-927b-6071b3547c57" name="Changes" comment="" />
-      <created>1627854646393</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1627854646393</updated>
-    </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
