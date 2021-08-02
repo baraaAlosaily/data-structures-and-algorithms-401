@@ -17,32 +17,6 @@ public class LinkedList {
 
         }
     }
-    /* Function to get the nth node from the last of a
-     linked list */
-    public int kthFromEnd(int var) {
-        int len = 0;
-        Node temp = head;
-
-        // 1) count the number of nodes in Linked List
-        while (temp != null) {
-            temp = temp.next;
-            len++;
-        }
-        // check if value of n is not more than length of
-        // the linked list
-        if (len <= var||var<0) {
-            System.out.println("The K is more,less,or negative number");
-            return -1;
-        }
-        temp = head;
-        // 2) get the (len-n+1)th node from the beginning
-        for (int i = 1; i < len - var ; i++) {
-            temp = temp.next;
-//            System.out.println(temp.data);
-        }
-        System.out.println(temp.data);
-        return temp.data;
-    }
     // Craete method that append add new int at the end of the added value
     public void append(int data){
         Node node=new Node(data);

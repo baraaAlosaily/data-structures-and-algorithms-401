@@ -20,7 +20,6 @@ public class App {
         list.insertbefore(5,13);
         list.insertAfter(35,16);
         list.show();
-        list.kthFromEnd(-2);
         System.out.println(list.includes(5));
     }
 }
