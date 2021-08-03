@@ -8,19 +8,29 @@ public class App {
 //    }
     public static void main(String[] args) {
 //        System.out.println(new App().getGreeting());
-// ============Uncomment to test the functions===============
-        LinkedList list=new LinkedList();
-        list.insert(5);
-        list.insert(10);
-        list.insert(15);
-        list.insert(20);
-        list.insert(25);
-        list.append(30);
-        list.append(35);
-        list.insertbefore(5,13);
-        list.insertAfter(35,16);
-        list.show();
-        list.kthFromEnd(-2);
-        System.out.println(list.includes(5));
+        LinkedList list1=new LinkedList();
+        list1.insert(5);
+        list1.insert(10);
+        list1.insert(15);
+        LinkedList list2=new LinkedList();
+        list2.insert(3);
+        list2.insert(4);
+        list2.insert(5);
+        LinkedList new1=new LinkedList();
+        list1.show();
+        list2.show();
+        new1.head= new1.zipLists(list1,list2);
+//        Node current=new1.head;
+//        while (current!=null){
+//            System.out.println(current.data);
+//            current=current.next;
+//        }
+//        System.out.println(new1.show());
+        new1.show();
+//        list1.show();
+//        list2.show();
+//        list.show();
+//        list.kthFromEnd(-2);
+//        System.out.println(list.includes(5));
     }
 }
