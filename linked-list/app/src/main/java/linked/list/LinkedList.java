@@ -9,12 +9,9 @@ public class LinkedList {
         if (head==null) {
             head=node;
         }else {
-            Node current=head;
-            while (current.next!=null){
-                current=current.next;
-            }
-            current.next=node;
-
+            node.data=data;
+            node.next=head;
+            head=node;
         }
     }
     /* Function to get the nth node from the last of a
@@ -92,7 +89,7 @@ public class LinkedList {
             current=current.next;
         }
         if (current.next==null){
-            insert(data);}
+            append(data);}
     }
     //Create includes method that will examine value that insert if it is include in the linkedlist will return true if note will return false
     public boolean includes(int data){
