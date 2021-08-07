@@ -8,6 +8,24 @@ public class App {
 //    }
     public static void main(String[] args) {
 //        System.out.println(new App().getGreeting());
+// ============Uncomment to test the functions===============
+        LinkedList list=new LinkedList();
+        list.insert(5);
+        list.insert(3);
+//        list.insert(1);
+        list.insert(3);
+        list.insert(5);
+//        list.append(30);
+//        list.append(35);
+//        list.insertbefore(5,13);
+//        list.insertAfter(35,16);
+//        list.show();
+//        list.kthFromEnd(-2);
+//        System.out.println(list.includes(5));
+        list.show();
+       boolean cond= list.palindrome(list);
+        System.out.println(cond
+                           
         LinkedList list1=new LinkedList();
         list1.insert(5);
         list1.insert(10);
