@@ -26,8 +26,8 @@ class AppTest {
         list.insert(15);
         list.insert(20);
         list.insert(25);
-        assertEquals(5,list.head.data);
-        assertEquals("{5} -> {10} -> {15} -> {20} -> {25} -> Null",list.show());
+        assertEquals(25,list.head.data);
+        assertEquals("{25} -> {20} -> {15} -> {10} -> {5} -> Null",list.show());
     }
     //(test5)return true when finding a value within the linked list that exists
     //(test6)return false when searching for a value in the linked list that does not exist
@@ -57,9 +57,9 @@ class AppTest {
         list3.insert(3);
         list3.insert(5);
         list3.insert(4);
-        assertEquals(5,list.head.data);
-        assertEquals(3,list2.head.data);
-        assertEquals(3,list3.head.data);
+        assertEquals(15,list.head.data);
+        assertEquals(4,list2.head.data);
+        assertEquals(4,list3.head.data);
     }
     //Code Challenge (6)
     //test 1:add a node to the end of the linked list
@@ -69,7 +69,7 @@ class AppTest {
         list.insert(10);
         list.insert(15);
         list.append(30);
-        assertEquals("{5} -> {10} -> {15} -> {30} -> Null",list.show());
+        assertEquals("{15} -> {10} -> {5} -> {30} -> Null",list.show());
     }
     //test 2:add multiple nodes to the end of a linked list
     @Test void addMutipleNote(){
@@ -80,7 +80,7 @@ class AppTest {
         list.append(28);
         list.append(33);
         list.append(36);
-        assertEquals("{5} -> {10} -> {15} -> {28} -> {33} -> {36} -> Null",list.show());
+        assertEquals("{15} -> {10} -> {5} -> {28} -> {33} -> {36} -> Null",list.show());
     }
     //test 3: insert a node before a node located i the middle of a linked list
     @Test void insertBesfore(){
@@ -88,8 +88,8 @@ class AppTest {
         list.insert(5);
         list.insert(10);
         list.insert(15);
-        list.insertbefore(15,45);
-        assertEquals("{5} -> {10} -> {45} -> {15} -> Null",list.show());
+        list.insertbefore(5,45);
+        assertEquals("{15} -> {10} -> {45} -> {5} -> Null",list.show());
 
     }
     //test4 insert a node before the first node of a linked list
@@ -98,8 +98,8 @@ class AppTest {
         list.insert(5);
         list.insert(10);
         list.insert(15);
-        list.insertbefore(5,45);
-        assertEquals("{45} -> {5} -> {10} -> {15} -> Null",list.show());
+        list.insertbefore(15,45);
+        assertEquals("{45} -> {15} -> {10} -> {5} -> Null",list.show());
 
     }
     //test 5 insert after a node in the middle of the linked list
@@ -109,8 +109,8 @@ class AppTest {
         list.insert(10);
         list.insert(15);
         list.insert(45);
-        list.insertAfter(10,35);
-        assertEquals("{5} -> {10} -> {35} -> {15} -> {45} -> Null",list.show());
+        list.insertAfter(15,35);
+        assertEquals("{45} -> {15} -> {35} -> {10} -> {5} -> Null",list.show());
     }
     //test 6 insert after a last node in the middle of the linked list
     @Test void insertAfterLastNode(){
@@ -119,8 +119,8 @@ class AppTest {
         list.insert(10);
         list.insert(15);
         list.insert(45);
-        list.insertAfter(45,35);
-        assertEquals("{5} -> {10} -> {15} -> {45} -> {35} -> Null",list.show());
+        list.insertAfter(5,35);
+        assertEquals("{45} -> {15} -> {10} -> {5} -> {35} -> Null",list.show());
     }
 
     //Code Challenge 6
@@ -169,6 +169,68 @@ class AppTest {
         list.insert(15);
         list.insert(20);
         list.kthFromEnd(2);
-        assertEquals(10,list.kthFromEnd(2));
+        assertEquals(15,list.kthFromEnd(2));
     }
+    // Code Challenge 8
+    // Happy Path
+    @Test void HappyPath(){
+        LinkedList list1=new LinkedList();
+        list1.insert(1);
+        list1.insert(2);
+        list1.insert(3);
+        LinkedList list2=new LinkedList();
+        list2.insert(4);
+        list2.insert(5);
+        list2.insert(6);
+        LinkedList new1=new LinkedList();
+        new1.head= new1.zipLists(list1,list2);
+        assertEquals("{6} -> {3} -> {5} -> {2} -> {4} -> {1} -> Null",new1.show());
+    }
+    //One list loger than other list
+    @Test void longer(){
+        LinkedList list1=new LinkedList();
+        list1.insert(1);
+        list1.insert(2);
+        list1.insert(3);
+        LinkedList list2=new LinkedList();
+        list2.insert(4);
+        list2.insert(5);
+        list2.insert(6);
+        list2.insert(7);
+        list2.insert(8);
+        LinkedList new1=new LinkedList();
+        new1.head= new1.zipLists(list1,list2);
+        assertEquals("{8} -> {3} -> {7} -> {2} -> {6} -> {1} -> {5} -> {4} -> Null",new1.show());
+    }
+    // If one of them null
+    @Test void oneNull(){
+        LinkedList list1=new LinkedList();
+//        list1.insert(1);
+//        list1.insert(2);
+//        list1.insert(3);
+        LinkedList list2=new LinkedList();
+        list2.insert(4);
+        list2.insert(5);
+        list2.insert(6);
+        LinkedList new1=new LinkedList();
+        new1.head= new1.zipLists(list1,list2);
+        assertEquals("{6} -> {5} -> {4} -> Null",new1.show());
+
+    }
+    // Two Lists is null
+    @Test void twoNull(){
+        LinkedList list1=new LinkedList();
+//        list1.insert(1);
+//        list1.insert(2);
+//        list1.insert(3);
+        LinkedList list2=new LinkedList();
+//        list2.insert(4);
+//        list2.insert(5);
+//        list2.insert(6);
+        LinkedList new1=new LinkedList();
+        new1.head= new1.zipLists(list1,list2);
+        assertEquals("Null",new1.show());
+
+    }
+
 }

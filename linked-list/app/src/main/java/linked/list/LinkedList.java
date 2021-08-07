@@ -12,12 +12,9 @@ public class LinkedList {
         if (head==null) {
             head=node;
         }else {
-            Node current=head;
-            while (current.next!=null){
-                current=current.next;
-            }
-            current.next=node;
-
+            node.data=data;
+            node.next=head;
+            head=node;
         }
     }
     /* Function to get the nth node from the last of a
@@ -95,7 +92,7 @@ public class LinkedList {
             current=current.next;
         }
         if (current.next==null){
-            insert(data);}
+            append(data);}
     }
     //Create includes method that will examine value that insert if it is include in the linkedlist will return true if note will return false
     public boolean includes(int data){
@@ -118,12 +115,14 @@ public class LinkedList {
     public String show(){
         String print="";
         Node node=head;
-        while (node.next!=null){
+        while (node!=null){
             print=print+"{"+node.data+"} -> ";
             node=node.next;
         }
-        String print2;
-        print2 = print+"{"+node.data+"} -> Null";
+        String print2="";
+//        if(node!=null){
+            print2 = print+"Null";
+//        }
         System.out.println(print2);
         return print2;
     }
@@ -153,5 +152,28 @@ public class LinkedList {
         }
 
         return true;
+
+    public Node zipLists(LinkedList q ,LinkedList p) {
+        if (p.head==null&&q.head==null)
+            return null;
+//        if (p.head==null)return q.head;
+//        if (q.head==null)return p.head;
+
+        Node p_curr=p.head,q_curr=q.head;
+        Node p_next,q_next;
+      while (p_curr!=null&&q_curr!=null){
+//          System.out.println("baraa");
+            p_next=p_curr.next;
+            q_next=q_curr.next;
+
+            q_curr.next=p_next;
+            p_curr.next=q_curr;
+
+            p_curr=p_next;
+            q_curr=q_next;
+
+        }
+        q.head=q_curr;
+        return p.head;
     }
 }
