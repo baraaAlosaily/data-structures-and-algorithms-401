@@ -1,4 +1,7 @@
 package linked.list;
+.
+import java.util.Stack;
+
 //Create Linkedlist class
 public class LinkedList {
     //assign the value of Node
@@ -123,5 +126,32 @@ public class LinkedList {
         print2 = print+"{"+node.data+"} -> Null";
         System.out.println(print2);
         return print2;
+    }
+    public boolean palindrome(LinkedList p){
+        if(head == null)
+            return true;
+
+        Node p_curr = p.head;
+        Node prev = new Node(head.data);
+
+        while(p_curr.next != null){
+            Node temp = new Node(p_curr.next.data);
+            temp.next = prev;
+            prev = temp;
+            p_curr = p_curr.next;
+        }
+
+        Node p1 = head;
+        Node p2 = prev;
+
+        while(p1!=null){
+            if(p1.data != p2.data)
+                return false;
+
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        return true;
     }
 }

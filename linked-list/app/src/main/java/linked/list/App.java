@@ -11,16 +11,19 @@ public class App {
 // ============Uncomment to test the functions===============
         LinkedList list=new LinkedList();
         list.insert(5);
-        list.insert(10);
-        list.insert(15);
-        list.insert(20);
-        list.insert(25);
-        list.append(30);
-        list.append(35);
-        list.insertbefore(5,13);
-        list.insertAfter(35,16);
+        list.insert(3);
+//        list.insert(1);
+        list.insert(3);
+        list.insert(5);
+//        list.append(30);
+//        list.append(35);
+//        list.insertbefore(5,13);
+//        list.insertAfter(35,16);
+//        list.show();
+//        list.kthFromEnd(-2);
+//        System.out.println(list.includes(5));
         list.show();
-        list.kthFromEnd(-2);
-        System.out.println(list.includes(5));
+       boolean cond= list.palindrome(list);
+        System.out.println(cond);
     }
 }
