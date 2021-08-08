@@ -16,17 +16,29 @@ public class App {
 //        System.out.println(stack.show());
 //        stack.peek();
 //        System.out.println(stack.isEmpty());
-        Queue new1=new Queue();
-        new1.enQueue(5);
-        new1.enQueue(10);
-        new1.enQueue(15);
-        System.out.println(new1.deQueue());
-        new1.show();
+//        Queue new1=new Queue();
+//        new1.enQueue(5);
+//        new1.enQueue(10);
+//        new1.enQueue(15);
+//        System.out.println(new1.deQueue());
+//        new1.show();
+//        System.out.println(new1.show());
+//        System.out.println(new1.peek());
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        new1.enQueqe(5);
+        new1.deQueue();
+        new1.deQueue();
+        new1.deQueue();
+        new1.enQueqe(6);
+        new1.deQueue();
+        new1.deQueue();
+        new1.enQueqe(7);
+        new1.enQueqe(8);
         System.out.println(new1.show());
-        System.out.println(new1.peek());
-
-
-
     }
 
 }

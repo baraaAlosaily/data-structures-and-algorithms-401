@@ -117,5 +117,59 @@ class AppTest {
         Queue newQue=new Queue();
         assertEquals(true,newQue.isEmpty());
     }
-
+    //Code Challege 11
+    //HappyPath
+    @Test void PesudoQueue(){
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        assertEquals("->{4}->{3}->{2}->{1}",new1.show());
+    }
+    @Test void enqueueInPesudo(){
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        new1.enQueqe(5);
+        assertEquals("->{5}->{4}->{3}->{2}->{1}",new1.show());
+    }
+    @Test void dequeueInPesudo(){
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        new1.enQueqe(5);
+        new1.deQueue();
+        assertEquals("->{5}->{4}->{3}->{2}",new1.show());
+    }
+    //
+    @Test void enQueueandDequeueandQueue(){
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        new1.enQueqe(5);
+        new1.deQueue();
+        new1.enQueqe(6);
+        new1.deQueue();
+        assertEquals("->{6}->{5}->{4}->{3}",new1.show());
+    }
+    //If Queue is empty
+    @Test void isEmpty2(){
+        PseudoQueue new1=new PseudoQueue();
+        new1.enQueqe(1);
+        new1.enQueqe(2);
+        new1.enQueqe(3);
+        new1.enQueqe(4);
+        new1.deQueue();
+        new1.deQueue();
+        new1.deQueue();
+        new1.deQueue();
+        assertEquals("",new1.show());
+    }
 }
