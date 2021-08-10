@@ -39,13 +39,12 @@ public class App {
 //        new1.enQueqe(8);
 //        System.out.println(new1.show());
         AnimalShelter dog=new AnimalShelter();
-        Animal animal=new Cats();
-        Animal animal1=new Dogs();
-        dog.enqueue(animal);
-        dog.enqueue(animal);
-        dog.enqueue(animal);
-        dog.enqueue(animal1);
-        System.out.println(dog.deeQueue("cat"));
+        dog.enqueue(new Cats("nimnim"));
+        dog.enqueue(new Dogs("mishmish"));
+        dog.deeQueue("cat");
+//        dog.enqueue(animal1);
+//        System.out.println(animal.name);
+//        System.out.println(dog.deeQueue("cat"));
 //        AnimalShelter cat=new AnimalShelter();
 //        Animal animal1=new Dogs();
 //        cat.enqueue(animal1);
@@ -53,8 +52,6 @@ public class App {
 //        cat.enqueue(animal1);
 //        cat.enqueue(animal1);
 //        dog.show();
-        System.out.println(dog);
-
     }
 
 }
