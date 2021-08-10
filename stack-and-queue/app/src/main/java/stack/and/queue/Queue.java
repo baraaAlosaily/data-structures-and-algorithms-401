@@ -1,46 +1,43 @@
 package stack.and.queue;
 
-public class Queue {
-    Node fornt;
-    Node rear;
-    int size = 0;
+public class Queue <T>{
+    Node <T> fornt;
+    Node <T> rear;
 
 
-    public void enQueue(int data) {
-        Node node=new Node(data);
-        if(size==0){
+    public void enQueue(T data) {
+        Node<T> node=new Node<>(data);
+        if(fornt==null){
             fornt=node;
-            rear=node;
-            size++;
         }else {
             rear.next=node;
-            rear=node;
-            size++;
         }
+        rear=node;
+        System.out.println(node.data);
     }
 
-    public int deQueue() {
+    public T deQueue() {
         if(fornt==null){
             try {
                 throw new Exception("Stack is Empty");
             } catch (Exception e) {
                 e.printStackTrace();
-                return -1;
+                return null;
             }
         }else {
-            Node rem=fornt;
+            Node<T> rem=fornt;
             fornt=fornt.next;
-            size--;
+            rem.next=null;
             return rem.data;
         }
     }
-    public int peek(){
+    public T peek(){
         if(fornt==null){
             try {
                 throw new Exception("Stack is Empty");
             } catch (Exception e) {
                 e.printStackTrace();
-                return -1;
+                return null;
             }
         }else {
             return fornt.data;
@@ -53,7 +50,6 @@ public class Queue {
             } catch (Exception e) {
                 e.printStackTrace();
                 return true;}
-
         }
         return false;
     }
@@ -64,7 +60,7 @@ public class Queue {
         if(fornt==null){
             System.out.println("Stack is Empty");
         }else {
-            Node node=fornt;
+            Node<T> node=fornt;
             while (node!=null){
 //                System.out.print("->{"+temp.data+"}");
                 str+="<-{"+node.data+"}";

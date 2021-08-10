@@ -1,27 +1,26 @@
 package stack.and.queue;
 
-public class PseudoQueue {
-    static Stack s1=new Stack();
-    static Stack s2=new Stack();
+public class PseudoQueue<T> {
+    public Stack<T> s1=new Stack<T>();
+    public Stack<T> s2=new Stack();
 
-    public String enQueqe(int data){
+    public void enQueqe(T data){
         s1.push(data);
         System.out.print("->{"+data+"}");
-        return data+" ";
     }
-    static int deQueue()
+    public T deQueue()
     {
 while (!s1.isEmpty()){
     s2.push(s1.pop());
 }
-int x=s2.pop();
+T x=s2.pop();
 while (!s2.isEmpty()){
     s1.push(s2.pop());
 }
         return x;
     }
 
-    static String show(){
+    public String show(){
         if (!s1.isEmpty()){
             System.out.println("peek"+s1.peek());
             return s1.show();

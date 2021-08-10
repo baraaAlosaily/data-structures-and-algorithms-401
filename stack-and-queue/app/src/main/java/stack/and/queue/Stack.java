@@ -1,10 +1,10 @@
 package stack.and.queue;
 
-public class Stack {
-    Node top=null;
-    Node newTop;
-    public void push(int data){
-        Node temp=new Node(data);
+public class Stack<T> {
+    Node<T> top=null;
+    Node<T> newTop;
+    public void push(T data){
+        Node<T> temp=new Node<>(data);
         temp.data=data;
         temp.next=top;
         top=temp;
@@ -15,7 +15,7 @@ public class Stack {
         if(top==null){
             System.out.println("Stack is Empty");
         }else {
-            Node temp=top;
+            Node<T> temp=top;
             while (temp!=null){
 //                System.out.print("->{"+temp.data+"}");
                 str+="->{"+temp.data+"}";
@@ -24,26 +24,26 @@ public class Stack {
         }
         return str;
     }
-    public int pop(){
+    public T pop(){
         if (top==null){
             try {
                 throw new Exception("Stack is Empty");
             } catch (Exception e) {
                 e.printStackTrace();
-                return -1;
+                return null;
             }
         }
         newTop=top;
         top=top.next;
         return newTop.data;
     }
-    public int peek() {
+    public T peek() {
         if (top==null){
             try {
                 throw new Exception("Stack is Empty");
             } catch (Exception e) {
                 e.printStackTrace();
-                return -1;
+                return null;
             }
 //            System.out.println("Stack is Empty");
 //            return -1;
