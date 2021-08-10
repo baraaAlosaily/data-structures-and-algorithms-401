@@ -43,7 +43,7 @@ public class AnimalShelter{
         if(this.cats.isEmpty()&&this.dogs.isEmpty()){
             return null;
         }
-        System.out.println("{"+this.dogs.show()+"}"+"{"+this.cats.show()+"}");
+        System.out.println("{"+this.dogs+"}"+"{"+this.cats.show()+"}");
         return "{"+dogs.show()+"}\n"+"{"+cats.show()+"}";
     }
 }

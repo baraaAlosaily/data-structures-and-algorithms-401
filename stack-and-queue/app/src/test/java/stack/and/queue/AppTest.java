@@ -178,58 +178,54 @@ class AppTest {
     //enque Multi list
     @Test void enqueueAnimals(){
        AnimalShelter pets=new AnimalShelter();
-       Animal animal=new Dogs();
-       Animal animal1=new Cats();
-       pets.enqueue(animal);
-       pets.enqueue(animal1);
-       pets.enqueue(animal);
-        pets.enqueue(animal);
-        pets.enqueue(animal1);
-        assertEquals("{Front<-{dog}<-{dog}<-{dog}<-Rear}\n" +
-                "{Front<-{cat}<-{cat}<-Rear}",pets.toString());
+   pets.enqueue(new Cats("NimNim"));
+        pets.enqueue(new Dogs("Dogy"));
+        pets.enqueue(new Cats("MishMish"));
+        pets.enqueue(new Dogs("Rose"));
+        assertEquals("{Front<-{dog :Dogy}<-{dog :Rose}<-Rear}\n" +
+                "{Front<-{cat :NimNim}<-{cat :MishMish}<-Rear}",pets.toString());
     }
     @Test void dequeueAnimals(){
         AnimalShelter pets=new AnimalShelter();
-        Animal animal=new Dogs();
-        Animal animal1=new Cats();
-        pets.enqueue(animal);
-        pets.enqueue(animal1);
-        pets.enqueue(animal);
-        pets.enqueue(animal);
-        pets.enqueue(animal1);
+        pets.enqueue(new Cats("NimNim"));
+        pets.enqueue(new Dogs("Dogy"));
+        pets.enqueue(new Cats("MishMish"));
+        pets.enqueue(new Dogs("Rose"));
         pets.deeQueue("cat");
-        pets.deeQueue("dog");
-        assertEquals("{Front<-{dog}<-{dog}<-Rear}\n" +
-                "{Front<-{cat}<-Rear}",pets.toString());
+        assertEquals("{Front<-{dog :Dogy}<-{dog :Rose}<-Rear}\n" +
+                "{Front<-{cat :MishMish}<-Rear}",pets.toString());
     }
     //Create Empty list
     @Test void emptyList(){
         AnimalShelter pets=new AnimalShelter();
-        Animal animal=new Dogs();
-        Animal animal1=new Cats();
         assertEquals(null,pets.toString());
     }
 //Dequeue last item
     @Test void dequeueLastnode(){
         AnimalShelter pets=new AnimalShelter();
-        Animal animal=new Dogs();
-        Animal animal1=new Cats();
-        pets.enqueue(animal);
-        pets.enqueue(animal1);
+        pets.enqueue(new Cats("NimNim"));
+        pets.enqueue(new Dogs("Dogy"));
+        pets.enqueue(new Cats("MishMish"));
+        pets.enqueue(new Dogs("Rose"));
         pets.deeQueue("cat");
+        pets.deeQueue("cat");
+        pets.deeQueue("dog");
         pets.deeQueue("dog");
         assertEquals(null,pets.toString());
     }
     //dequeue different pref
     @Test void differentPref(){
         AnimalShelter pets=new AnimalShelter();
-        Animal animal=new Dogs();
-        Animal animal1=new Cats();
-        pets.enqueue(animal);
-        pets.enqueue(animal1);
+        pets.enqueue(new Cats("NimNim"));
+        pets.enqueue(new Dogs("Dogy"));
+        pets.enqueue(new Cats("MishMish"));
+        pets.enqueue(new Dogs("Rose"));
         pets.deeQueue("cat");
+        pets.deeQueue("cat");
+        pets.deeQueue("dog");
         pets.deeQueue("bird");
-        assertEquals("{Front<-{dog}<-Rear}\n" +
+        assertEquals(null,pets.deeQueue("bird"));
+        assertEquals("{Front<-{dog :Rose}<-Rear}\n" +
                 "{Front<-Rear}",pets.toString());
     }
 
