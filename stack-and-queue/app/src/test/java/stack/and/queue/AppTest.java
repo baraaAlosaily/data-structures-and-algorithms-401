@@ -172,4 +172,65 @@ class AppTest {
         new1.deQueue();
         assertEquals("",new1.show());
     }
+    //Code Challenge 12
+
+    //Happy PAth
+    //enque Multi list
+    @Test void enqueueAnimals(){
+       AnimalShelter pets=new AnimalShelter();
+       Animal animal=new Dogs();
+       Animal animal1=new Cats();
+       pets.enqueue(animal);
+       pets.enqueue(animal1);
+       pets.enqueue(animal);
+        pets.enqueue(animal);
+        pets.enqueue(animal1);
+        assertEquals("{Front<-{dog}<-{dog}<-{dog}<-Rear}\n" +
+                "{Front<-{cat}<-{cat}<-Rear}",pets.toString());
+    }
+    @Test void dequeueAnimals(){
+        AnimalShelter pets=new AnimalShelter();
+        Animal animal=new Dogs();
+        Animal animal1=new Cats();
+        pets.enqueue(animal);
+        pets.enqueue(animal1);
+        pets.enqueue(animal);
+        pets.enqueue(animal);
+        pets.enqueue(animal1);
+        pets.deeQueue("cat");
+        pets.deeQueue("dog");
+        assertEquals("{Front<-{dog}<-{dog}<-Rear}\n" +
+                "{Front<-{cat}<-Rear}",pets.toString());
+    }
+    //Create Empty list
+    @Test void emptyList(){
+        AnimalShelter pets=new AnimalShelter();
+        Animal animal=new Dogs();
+        Animal animal1=new Cats();
+        assertEquals(null,pets.toString());
+    }
+//Dequeue last item
+    @Test void dequeueLastnode(){
+        AnimalShelter pets=new AnimalShelter();
+        Animal animal=new Dogs();
+        Animal animal1=new Cats();
+        pets.enqueue(animal);
+        pets.enqueue(animal1);
+        pets.deeQueue("cat");
+        pets.deeQueue("dog");
+        assertEquals(null,pets.toString());
+    }
+    //dequeue different pref
+    @Test void differentPref(){
+        AnimalShelter pets=new AnimalShelter();
+        Animal animal=new Dogs();
+        Animal animal1=new Cats();
+        pets.enqueue(animal);
+        pets.enqueue(animal1);
+        pets.deeQueue("cat");
+        pets.deeQueue("bird");
+        assertEquals("{Front<-{dog}<-Rear}\n" +
+                "{Front<-Rear}",pets.toString());
+    }
+
 }
