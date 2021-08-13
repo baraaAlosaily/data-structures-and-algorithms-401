@@ -229,4 +229,29 @@ class AppTest {
                 "{Front<-Rear}",pets.toString());
     }
 
+    //Code Challenge 13
+    @Test void happyPath(){
+        String value="([{}]))";
+        assertEquals(false,App.validateBrackets(value));
+    }
+    @Test void happyPath2(){
+        String value="([{}])";
+        assertEquals(true,App.validateBrackets(value));
+    }
+    @Test void EdgeCase(){
+        String value="";
+        assertEquals(true,App.validateBrackets(value));
+    }
+    @Test void oneBracketCase(){
+        String value="}";
+        assertEquals(false,App.validateBrackets(value));
+    }
+    @Test void typingInsideBracketsCase(){
+        String value="{}{Code}[Fellows](())";
+        assertEquals(true,App.validateBrackets(value));
+    }
+    @Test void happyPath3(){
+        String value="(](";
+        assertEquals(false,App.validateBrackets(value));
+    }
 }

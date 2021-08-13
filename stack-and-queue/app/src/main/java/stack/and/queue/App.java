@@ -3,6 +3,9 @@
  */
 package stack.and.queue;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class App {
     public static void main(String[]arg) {
 //        Stack stack=new Stack();
@@ -38,10 +41,10 @@ public class App {
 //        new1.enQueqe(7);
 //        new1.enQueqe(8);
 //        System.out.println(new1.show());
-        AnimalShelter dog=new AnimalShelter();
-        dog.enqueue(new Cats("nimnim"));
-        dog.enqueue(new Dogs("mishmish"));
-        dog.deeQueue("cat");
+//        AnimalShelter dog=new AnimalShelter();
+//        dog.enqueue(new Cats("nimnim"));
+//        dog.enqueue(new Dogs("mishmish"));
+//        dog.deeQueue("cat");
 //        dog.enqueue(animal1);
 //        System.out.println(animal.name);
 //        System.out.println(dog.deeQueue("cat"));
@@ -52,6 +55,43 @@ public class App {
 //        cat.enqueue(animal1);
 //        cat.enqueue(animal1);
 //        dog.show();
+        String value="([{}]))";
+        if (validateBrackets(value)) {
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
     }
+    public static boolean validateBrackets(String value){
+        Deque<Character>stack=new ArrayDeque<Character>();
+        for (int i=0;i<value.length();i++){
+            char x=value.charAt(i);
+            if(x =='{'||x=='('||x=='['){
+                stack.push(x);
+                continue;
+            }
+            if (stack.isEmpty())
+                return false;
+            char check;
+            switch (x){
+                case ')':
+                    check=stack.pop();
+                    if (check== '{'||check=='[')
+                        return false;
+                        break;
+                case '}':
+                    check = stack.pop();
+                    if (check == '(' || check == '[')
+                        return false;
+                    break;
 
+                case ']':
+                    check = stack.pop();
+                    if (check == '(' || check == '{')
+                        return false;
+                    break;
+            }
+        }
+        return true;
+    }
 }
