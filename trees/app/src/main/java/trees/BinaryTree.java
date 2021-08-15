@@ -74,13 +74,18 @@ public class BinaryTree {
         }
         return preOrderList;
     }
-//    void preOrder(){
-//        preOrder(root);
-//    }
-//    void inOrder(){
-//        inOrder(root);
-//    }
-//    void postOrder(){
-//        postOrder(root);
-//    }
+    public int maximumValue(Node node){
+        if(node==null){
+            return -1;
+        }
+     int res=node.data;
+        int ires=maximumValue(node.leftChild);
+        int rres=maximumValue(node.rightChild);
+        if(ires>res)
+            res=ires;
+        if(rres>res)
+            res=rres;
+        return res;
+    }
+
 }

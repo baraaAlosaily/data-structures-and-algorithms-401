@@ -99,5 +99,26 @@ class AppTest {
         addnode.add(3);
         assertEquals(addnode,new1.postOrder(new1.root));
     }
+    //Code Challenge 16
+    @Test void happypath() {
+        BinaryTree new1 = new BinaryTree();
+        new1.root = new Node(3);
+        new1.root.rightChild = new Node(5);
+        new1.root.leftChild = new Node(7);
+        new1.root.rightChild.leftChild = new Node(4);
+        new1.root.rightChild.rightChild = new Node(9);
+        assertEquals(9, new1.maximumValue(new1.root));
+    }
+
+    @Test void ifNodeHaveOne() {
+        BinaryTree new1 = new BinaryTree();
+        new1.root = new Node(3);
+        assertEquals(3, new1.maximumValue(new1.root));
+    }
+    //Edge Case
+    @Test void edgeCase() {
+        BinaryTree new1 = new BinaryTree();
+        assertEquals(-1, new1.maximumValue(new1.root));
+    }
 }
 
