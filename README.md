@@ -14,3 +14,6 @@ Pseudo|[link9](./stack-and-queue/README.md)
 AnimalShelter|[link10](./AnimalShelter/Readme.md)
 ValidateBrackets|[link12](./validate-brackets/Readme.md)
 Trees|[link11](./trees/Readme.md)
+Tree|[Max](./max/Readme.md)
+Beardth First|[Braedth First](./beadthFirst/Readme.md)
+

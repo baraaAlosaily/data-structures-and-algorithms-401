@@ -13,8 +13,10 @@ public class App {
         new1.root.rightChild.leftChild=new Node(4);
         new1.root.rightChild.rightChild=new Node(9);
         System.out.println(new1.inOrder(new1.root));
-        new1.inOrder(new1.root);
+//        new1.inOrder(new1.root);
         System.out.println(new1.maximumValue(new1.root));
+        System.out.println(new1.breadthFirst(new1));
+        new1.breadthFirst(new1);
 //        System.out.println(new1.preOrder(new1.root));
 //        System.out.println(new1.postOrder(new1.root));
 //        Node root=new Node(5);
@@ -25,19 +27,19 @@ public class App {
 //        }
 //        Node new2=new Node(10);
 //        binarySearchTree.add(new2,binarySearchTree.root);
-        Node root=new Node(6);
-        Node new5=null;
-        BinarySearchTree binarySearchTree=new BinarySearchTree(root);
-        int[] nodes={2,5,6,8,5,9,7,1,8};
-        for(int i=0;i<nodes.length;i++){
-            new5=new Node(nodes[i]);
-            binarySearchTree.add(new5,binarySearchTree.root);
-        }
-        System.out.println(binarySearchTree.inOrder(new5.rightChild));
-        binarySearchTree.inOrder(new5);
-        System.out.println(binarySearchTree.root.data);
-        binarySearchTree.contain(9,binarySearchTree.root);
-//        binarySearchTree.contain(15,binarySearchTree.root);
-        System.out.println(binarySearchTree.root.leftChild.data);
+//        Node root=new Node(6);
+//        Node new5=null;
+//        BinarySearchTree binarySearchTree=new BinarySearchTree(root);
+//        int[] nodes={2,5,6,8,5,9,7,1,8};
+//        for(int i=0;i<nodes.length;i++){
+//            new5=new Node(nodes[i]);
+//            binarySearchTree.add(new5,binarySearchTree.root);
+//        }
+//        System.out.println(binarySearchTree.inOrder(new5.rightChild));
+//        binarySearchTree.inOrder(new5);
+//        System.out.println(binarySearchTree.root.data);
+//        binarySearchTree.contain(9,binarySearchTree.root);
+////        binarySearchTree.contain(15,binarySearchTree.root);
+//        System.out.println(binarySearchTree.root.leftChild.data);
     }
 }
