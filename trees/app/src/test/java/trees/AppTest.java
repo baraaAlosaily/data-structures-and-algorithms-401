@@ -120,5 +120,28 @@ class AppTest {
         BinaryTree new1 = new BinaryTree();
         assertEquals(-1, new1.maximumValue(new1.root));
     }
+    // Code Challenge 17
+    @Test void happyPath(){
+        BinaryTree new1 = new BinaryTree();
+        new1.root = new Node(3);
+        new1.root.rightChild = new Node(5);
+        new1.root.leftChild = new Node(7);
+        new1.root.rightChild.leftChild = new Node(4);
+        new1.root.rightChild.rightChild = new Node(9);
+        List<Integer> addnode=new ArrayList<>();
+        addnode.add(3);
+        addnode.add(7);
+        addnode.add(5);
+        addnode.add(4);
+        addnode.add(9);
+        assertEquals(addnode, new1.breadthFirst(new1));
+    }
+    //Edge case
+    @Test
+    public void edgecase(){
+        BinaryTree new1 = new BinaryTree();
+        assertEquals(null, new1.breadthFirst(new1));
+    }
+
 }
 

@@ -1,16 +1,18 @@
 package trees;
 
+import com.google.common.collect.ForwardingQueue;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree {
-    Node root;
+public class BinaryTree <T> {
+    Node <T> root;
     public BinaryTree() {
         root=null;
     }
-    List<Integer> postOrderlist=new ArrayList<Integer>();
+    List<T> postOrderlist=new ArrayList<>();
 
-    public List<Integer> postOrder(Node node){
+    public List<T> postOrder(Node<T> node){
 
         if (node==null){
             try {
@@ -30,8 +32,8 @@ public class BinaryTree {
         return postOrderlist;
     }
 
-    List <Integer> inOrderList=new ArrayList<>();
-    public List<Integer> inOrder(Node node){
+    List <T> inOrderList=new ArrayList<>();
+    public List<T> inOrder(Node<T> node){
         if (node==null){
             try {
                 throw new Exception("Tree is Empty");
@@ -53,8 +55,8 @@ public class BinaryTree {
 
     }
 
-    List<Integer> preOrderList=new ArrayList<Integer>();
-    public List<Integer> preOrder(Node node){
+    List<T> preOrderList=new ArrayList<T>();
+    public List<T> preOrder(Node<T> node){
         if (node==null){
             try {
                 throw new Exception("Tree is Empty");
@@ -74,11 +76,11 @@ public class BinaryTree {
         }
         return preOrderList;
     }
-    public int maximumValue(Node node){
+    public int maximumValue(Node<T> node){
         if(node==null){
             return -1;
         }
-     int res=node.data;
+     int res= (int) node.data;
         int ires=maximumValue(node.leftChild);
         int rres=maximumValue(node.rightChild);
         if(ires>res)
@@ -87,5 +89,37 @@ public class BinaryTree {
             res=rres;
         return res;
     }
+
+    public List<T> breadthFirst(BinaryTree<T> binaryTree) {
+        if (binaryTree.root == null) {
+            return null;
+        }
+        List<T> breadth = new ArrayList<T>();
+        Queue<T> queue = new Queue<T>();
+        queue.enQueue(binaryTree.root);
+
+        while (!queue.isEmpty()) {
+            if (queue.fornt.leftChild != null) {
+                queue.enQueue(queue.fornt.leftChild);
+            }
+            if (queue.fornt.rightChild != null) {
+                queue.enQueue(queue.fornt.rightChild);
+            }
+            breadth.add(queue.deQueue());
+        }
+        return breadth;
+    }
+//        if(root!=null){
+//            breadth.add(root.data);
+//        }
+//            if (node.leftChild != null) {
+//                breadth.add(root.leftChild.data);
+//            }
+//            if (node.rightChild != null) {
+//                breadth.add(root.rightChild.data);
+//            }
+//
+//        return breadth;
+
 
 }
