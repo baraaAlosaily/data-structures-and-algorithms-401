@@ -16,4 +16,5 @@ ValidateBrackets|[link12](./validate-brackets/Readme.md)
 Trees|[link11](./trees/Readme.md)
 Tree|[Max](./max/Readme.md)
 Beardth First|[Braedth First](./beadthFirst/Readme.md)
+Fizzbuzz|[fizzbuzz](./Fizzbuzz/Readme.md)
 

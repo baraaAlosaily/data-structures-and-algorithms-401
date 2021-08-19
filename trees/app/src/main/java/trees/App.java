@@ -3,20 +3,25 @@
  */
 package trees;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class App {
 
     public static void main(String[] args) {
-        BinaryTree new1=new BinaryTree();
-        new1.root=new Node(3);
-        new1.root.rightChild=new Node(5);
-        new1.root.leftChild=new Node(7);
-        new1.root.rightChild.leftChild=new Node(4);
-        new1.root.rightChild.rightChild=new Node(9);
-        System.out.println(new1.inOrder(new1.root));
-//        new1.inOrder(new1.root);
-        System.out.println(new1.maximumValue(new1.root));
-        System.out.println(new1.breadthFirst(new1));
-        new1.breadthFirst(new1);
+//        BinaryTree<Integer> new1=new BinaryTree<Integer>();
+//        new1.root=new Node<>(3);
+//        new1.root.rightChild=new Node<>(5);
+//        new1.root.leftChild=new Node<>(7);
+//        new1.root.rightChild.leftChild=new Node<>(4);
+//        new1.root.rightChild.rightChild=new Node<>(9);
+//        System.out.println(new1.inOrder(new1.root));
+////        new1.inOrder(new1.root);
+//        System.out.println(new1.maximumValue(new1.root));
+//        System.out.println(new1.breadthFirst(new1));
+//        new1.breadthFirst(new1);
 //        System.out.println(new1.preOrder(new1.root));
 //        System.out.println(new1.postOrder(new1.root));
 //        Node root=new Node(5);
@@ -41,5 +46,38 @@ public class App {
 //        binarySearchTree.contain(9,binarySearchTree.root);
 ////        binarySearchTree.contain(15,binarySearchTree.root);
 //        System.out.println(binarySearchTree.root.leftChild.data);
+        KaryTree <Integer> karyTree=new KaryTree<>(3);
+        karyTree.add(5);
+        karyTree.add(12);
+        karyTree.add(10);
+        System.out.println(fizzBuzzTree(karyTree).root.allChildren.get(0).value);
+    }
+
+    public static KaryTree<String> fizzBuzzTree(KaryTree<Integer> tree){
+        KaryTree<String> newTree = new KaryTree<>(tree.K);
+        Queue<Knode<Integer>> newQueue = new LinkedList<>();
+        if(tree.root != null){
+            newQueue.add(tree.root);
+            while(!newQueue.isEmpty()){
+                Knode<Integer> current = newQueue.poll();
+                String currentValue;
+                if(current.value % 3 == 0 && current.value % 5 == 0)
+                    currentValue = "FizzBuzz";
+                else if((int)current.value % 3 == 0){
+                    currentValue="Fizz";
+                }
+                else if((int)current.value % 5 == 0){
+                    currentValue="Buzz";
+                }
+                else{
+                    currentValue=current.value.toString();
+                }
+                newTree.add(currentValue);
+                if(! current.allChildren.isEmpty()){
+                    newQueue.addAll(current.allChildren);
+                }
+            }
+        }
+        return newTree;
     }
 }

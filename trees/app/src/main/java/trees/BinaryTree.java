@@ -90,25 +90,25 @@ public class BinaryTree <T> {
         return res;
     }
 
-    public List<T> breadthFirst(BinaryTree<T> binaryTree) {
-        if (binaryTree.root == null) {
-            return null;
-        }
-        List<T> breadth = new ArrayList<T>();
-        Queue<T> queue = new Queue<T>();
-        queue.enQueue(binaryTree.root);
-
-        while (!queue.isEmpty()) {
-            if (queue.fornt.leftChild != null) {
-                queue.enQueue(queue.fornt.leftChild);
-            }
-            if (queue.fornt.rightChild != null) {
-                queue.enQueue(queue.fornt.rightChild);
-            }
-            breadth.add(queue.deQueue());
-        }
-        return breadth;
-    }
+//    public List<T> breadthFirst(BinaryTree<T> binaryTree) {
+//        if (binaryTree.root == null) {
+//            return null;
+//        }
+//        List<T> breadth = new ArrayList<T>();
+//        Queue<T> queue = new Queue<T>();
+//        queue.enQueue(binaryTree.root);
+//
+//        while (!queue.isEmpty()) {
+//            if (queue.fornt.leftChild != null) {
+//                queue.enQueue(queue.fornt.leftChild);
+//            }
+//            if (queue.fornt.rightChild != null) {
+//                queue.enQueue(queue.fornt.rightChild);
+//            }
+//            breadth.add(queue.deQueue());
+//        }
+//        return breadth;
+//    }
 //        if(root!=null){
 //            breadth.add(root.data);
 //        }
