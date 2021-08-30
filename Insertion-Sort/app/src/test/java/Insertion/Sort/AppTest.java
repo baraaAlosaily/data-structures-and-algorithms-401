@@ -24,4 +24,23 @@ class AppTest {
         int[] arr={2,3,5,7,13,11};
         assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(App.InsertionSort(arr)));
     }
+
+    //Code Challenge 26
+    @Test void ReversesortedMergeSort() {
+        int[] arr={2,3,5,7,13,11};
+        App.Mergesort(arr);
+        assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(arr));
+    }
+
+    @Test void FewuniquesMergeSort() {
+        int[] arr={5,12,7,5,5,7};
+        App.Mergesort(arr);
+        assertEquals("[5, 5, 5, 7, 7, 12]", Arrays.toString(arr));
+    }
+
+    @Test void NearlysortedMergeSort() {
+        int[] arr={2,3,5,7,13,11};
+        App.Mergesort(arr);
+        assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(arr));
+    }
 }
