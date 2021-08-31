@@ -43,4 +43,24 @@ class AppTest {
         App.Mergesort(arr);
         assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(arr));
     }
+
+
+    //Code Challenge 28
+    @Test void ReversesortedQuickSort() {
+        int[] arr={2,3,5,7,13,11};
+        App.QuickSort(arr,0,arr.length-1);
+        assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(arr));
+    }
+
+    @Test void FewuniquesQuickSort() {
+        int[] arr={5,12,7,5,5,7};
+        App.QuickSort(arr,0,arr.length-1);
+        assertEquals("[5, 5, 5, 7, 7, 12]", Arrays.toString(arr));
+    }
+
+    @Test void NearlysortedQuickSort() {
+        int[] arr={2,3,5,7,13,11};
+        App.QuickSort(arr,0,arr.length-1);
+        assertEquals("[2, 3, 5, 7, 11, 13]", Arrays.toString(arr));
+    }
 }
