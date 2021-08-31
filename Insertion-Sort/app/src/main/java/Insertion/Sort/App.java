@@ -10,7 +10,7 @@ public class App {
     public static void main(String[] args) {
       int[] sample=  {8,4,23,42,16,15};
 //      selectsort(sample);
-        Mergesort(sample);
+        QuickSort(sample,0,sample.length-1);
         System.out.println(Arrays.toString(sample));
 //        System.out.println(InsertionSort(sample));
 //        InsertionSort(sample);
@@ -88,5 +88,33 @@ public class App {
                 i=i+1;
             }
         }
+    }
+
+    public static void QuickSort(int[] arr,int left,int right){
+        if(left<right){
+            int position=Partition(arr,left,right);
+            QuickSort(arr,left,position-1);
+            QuickSort(arr,position+1,right);
+        }
+    }
+    public static int Partition(int[] arr, int left, int right){
+        int pivot=arr[right];
+        int low=left-1;
+
+        for (int i = left; i < right; i++) {
+            if(arr[i]<=pivot){
+                low++;
+                swap(arr,i,low);
+            }
+        }
+        swap(arr,right,low+1);
+        return low+1;
+    }
+
+    public static void swap(int[] arr,int i,int low){
+        int temp;
+        temp=arr[i];
+        arr[i]=arr[low];
+        arr[low]=temp;
     }
 }
