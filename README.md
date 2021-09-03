@@ -1,7 +1,7 @@
 # data-structures-and-algorithms-401
 
-title|line
----|---
+title|line|code
+---|---|---
 Array-reserve|[link](./array-reverse/README.md)
 Array-insert-shift|[link2](./array-insert-shift)
 Array-binary-search|[link3](./array-reverse/README.md)
@@ -17,4 +17,5 @@ Trees|[link11](./trees/Readme.md)
 Tree|[Max](./max/Readme.md)
 Beardth First|[Braedth First](./beadthFirst/Readme.md)
 Fizzbuzz|[fizzbuzz](./Fizzbuzz/Readme.md)
+HashTable|[Hashtable](./hash-table/HashTable.md)|[Code](./hash-table/app/src)
 
