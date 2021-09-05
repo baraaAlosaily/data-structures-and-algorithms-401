@@ -18,4 +18,5 @@ Tree|[Max](./max/Readme.md)
 Beardth First|[Braedth First](./beadthFirst/Readme.md)
 Fizzbuzz|[fizzbuzz](./Fizzbuzz/Readme.md)
 HashTable|[Hashtable](./hash-table/HashTable.md)|[Code](./hash-table/app/src)
+Repeat-HashMap|[Repeat-HashMap](.Repeat-HashMap/Readme.md)|[Code](./hash-table/app/src)
 

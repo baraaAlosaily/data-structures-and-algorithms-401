@@ -1,6 +1,6 @@
 package hash.table;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class HashTable<T> {
     Entery[] arr;
@@ -64,12 +64,33 @@ String str="";
         }
         return false;
     }
+    // Code Challenge 31
+    public String RepeatedWord(String sentence){
+        String first=sentence.replace(",","");
+        System.out.println("my line: "+first);
+        String[] wordList= first.split(" ");
+        System.out.println(Arrays.toString(wordList));
+        Map<String,Integer> List=new HashMap<>();
+        for (String word:wordList){
+            Integer integer=List.get(word.toLowerCase());
+            if(integer==null){
+                List.put(word.toLowerCase(), 1);
+            }else {
+                List.put(word.toLowerCase(), integer+1);
+                System.out.println(word);
+                return word.toLowerCase();
+            }
 
-    @Override
-    public String toString() {
-        return "HashTable{" +
-                "arr=" + Arrays.toString(arr) +
-                ", size=" + size +
-                '}';
+        }
+        return null;
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "HashTable{" +
+//                "arr=" + Arrays.toString(arr) +
+//                ", size=" + size +
+//                '}';
+//    }
 }
