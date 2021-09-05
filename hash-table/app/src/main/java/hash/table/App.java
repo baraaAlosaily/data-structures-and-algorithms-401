@@ -7,19 +7,24 @@ import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
-        HashTable<String> student=new HashTable<>(5);
-        student.Add(1,"baraa");
-        student.Add(13,"Mohammad");
-        student.Add(20,"Husain");
-        student.Add(17,"Israa");
-        student.Add(15,"Ghada");
-        student.Add(25,"Ghad");
-        student.Add(23, "mohammad");
-        System.out.println(student);
-        System.out.println(student.HashString("23"));
-        System.out.println(student.Contain(7));
-        System.out.println(student.Hash(25));
-        System.out.println(student.show());
+//        HashTable<String> student=new HashTable<>(5);
+//        student.Add(1,"baraa");
+//        student.Add(13,"Mohammad");
+//        student.Add(20,"Husain");
+//        student.Add(17,"Israa");
+//        student.Add(15,"Ghada");
+//        student.Add(25,"Ghad");
+//        student.Add(23, "mohammad");
+//        System.out.println(student);
+//        System.out.println(student.HashString("23"));
+//        System.out.println(student.Contain(7));
+//        System.out.println(student.Hash(25));
+//        System.out.println(student.show());
+        HashTable<String> collectWords=new HashTable<>(1);
+        String sentence="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        collectWords.RepeatedWord(sentence);
+        System.out.println(collectWords.RepeatedWord(sentence));
+
 
 
     }
