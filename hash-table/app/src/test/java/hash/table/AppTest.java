@@ -94,4 +94,9 @@ class AppTest {
         assertEquals("summer",collectWords.RepeatedWord(sentences) );
     }
 
+    @Test void nullString(){
+        HashTable<String> collectWords=new HashTable<>(1);
+        String sentences="";
+        assertEquals(null,collectWords.RepeatedWord(sentences) );
+    }
 }
