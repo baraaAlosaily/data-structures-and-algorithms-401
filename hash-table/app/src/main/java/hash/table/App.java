@@ -25,6 +25,27 @@ public class App {
         collectWords.RepeatedWord(sentence);
         System.out.println(collectWords.RepeatedWord(sentence));
 
+        tree<Integer> new1=new tree<>();
+        new1.root=new Node<>(3);
+        new1.root.rightChild=new Node<>(9);
+        new1.root.leftChild=new Node<>(7);
+        new1.root.rightChild.leftChild=new Node<>(4);
+        new1.root.rightChild.rightChild=new Node<>(9);
+//        System.out.println(new1.inOrder(new1.root));
+
+        tree<Integer> new2=new tree<>();
+        new2.root=new Node<>(10);
+        new2.root.rightChild=new Node<>(15);
+        new2.root.leftChild=new Node<>(27);
+        new2.root.rightChild.leftChild=new Node<>(4);
+        new2.root.rightChild.rightChild=new Node<>(9);
+
+        HashTable<String> collectWords2=new HashTable<>(5);
+        collectWords2.treeInsersection(new1,new2);
+//        System.out.println(collectWords2.treeInsersection(new1,new2));
+
+
+
 
 
     }

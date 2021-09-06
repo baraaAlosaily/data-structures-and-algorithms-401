@@ -85,6 +85,29 @@ String str="";
         return null;
     }
 
+    //Code Challenge 32
+    public List<Integer> treeInsersection(tree<Integer> treeOne, tree<Integer> treeTwo){
+        Map<Integer,Integer> List=new HashMap<>();
+        Set<Integer> numberOfList1=treeOne.inOrder(treeOne.root);
+        Set<Integer> numberOfList2=treeTwo.inOrder(treeTwo.root);
+        if(treeTwo.root==null||treeOne.root==null){
+            return null;
+        }
+        List<Integer> allNum=new ArrayList<>();
+        numberOfList1.retainAll(numberOfList2);
+        System.out.println(numberOfList1);
+        for (int num:numberOfList1){
+            Integer integer=List.get(num);
+            if (integer==null){
+                List.put(num, 1);
+                allNum.add(List.getOrDefault(1, num));
+                System.out.println(allNum);
+            }
+        }
+        System.out.println(allNum);
+       return  allNum;
+    }
+
 
 //    @Override
 //    public String toString() {
