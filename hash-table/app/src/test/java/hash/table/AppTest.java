@@ -4,6 +4,10 @@
 package hash.table;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -99,4 +103,78 @@ class AppTest {
         String sentences="";
         assertEquals(null,collectWords.RepeatedWord(sentences) );
     }
+
+    // Code Challenge 32
+
+    @Test void HappypathCodeChallenge(){
+        tree<Integer> new1=new tree<>();
+        new1.root=new Node<>(3);
+        new1.root.rightChild=new Node<>(5);
+        new1.root.leftChild=new Node<>(7);
+        new1.root.rightChild.leftChild=new Node<>(4);
+        new1.root.rightChild.rightChild=new Node<>(9);
+//        System.out.println(new1.inOrder(new1.root));
+
+        tree<Integer> new2=new tree<>();
+        new2.root=new Node<>(10);
+        new2.root.rightChild=new Node<>(15);
+        new2.root.leftChild=new Node<>(27);
+        new2.root.rightChild.leftChild=new Node<>(4);
+        new2.root.rightChild.rightChild=new Node<>(9);
+        List<Integer> lastArr=new ArrayList<>();
+        lastArr.add(4);
+        lastArr.add(9);
+
+        HashTable<String> collectWords2=new HashTable<>(5);
+        assertEquals(lastArr, collectWords2.treeInsersection(new1,new2));
+    }
+    @Test void ifTheArrayHaveDublicatedValue(){
+        tree<Integer> new1=new tree<>();
+        new1.root=new Node<>(150);
+        new1.root.rightChild=new Node<>(250);
+        new1.root.leftChild=new Node<>(100);
+        new1.root.leftChild.leftChild=new Node<>(200);
+        new1.root.leftChild.rightChild=new Node<>(160);
+        new1.root.leftChild.rightChild.rightChild=new Node<>(175);
+        new1.root.leftChild.rightChild.leftChild=new Node<>(125);
+        new1.root.rightChild.leftChild=new Node<>(200);
+        new1.root.rightChild.rightChild=new Node<>(350);
+        new1.root.rightChild.rightChild.rightChild=new Node<>(500);
+        new1.root.rightChild.rightChild.leftChild=new Node<>(300);
+//        System.out.println(new1.inOrder(new1.root));
+
+        tree<Integer> new2=new tree<>();
+        new2.root=new Node<>(42);
+        new2.root.rightChild=new Node<>(600);
+        new2.root.leftChild=new Node<>(100);
+        new2.root.leftChild.leftChild=new Node<>(15);
+        new2.root.leftChild.rightChild=new Node<>(160);
+        new2.root.leftChild.rightChild.rightChild=new Node<>(175);
+        new2.root.leftChild.rightChild.leftChild=new Node<>(125);
+        new2.root.rightChild.leftChild=new Node<>(200);
+        new2.root.rightChild.rightChild=new Node<>(350);
+        new2.root.rightChild.rightChild.rightChild=new Node<>(500);
+        new2.root.rightChild.rightChild.leftChild=new Node<>(4);
+        List<Integer> lastArr=new ArrayList<>();
+        lastArr.add(160);
+        lastArr.add(100);
+        lastArr.add(500);
+        lastArr.add(200);
+        lastArr.add(125);
+        lastArr.add(350);
+        lastArr.add(175);
+
+
+        HashTable<String> collectWords2=new HashTable<>(5);
+        assertEquals(lastArr, collectWords2.treeInsersection(new1,new2));
+    }
+
+    @Test void ifTheArraysIsEmpty(){
+        tree<Integer> new1=new tree<>();
+        tree<Integer> new2=new tree<>();
+        HashTable<String> collectWords2=new HashTable<>(5);
+        assertEquals(null, collectWords2.treeInsersection(new1,new2));
+    }
+
+
 }
