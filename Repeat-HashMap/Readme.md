@@ -4,7 +4,7 @@ Write a function called repeated word that finds the first word to occur more th
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![img](./img/Repeat-Hash.png)
+![img](./img/Repeat-hash.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
