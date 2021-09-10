@@ -176,5 +176,43 @@ class AppTest {
         assertEquals(null, collectWords2.treeInsersection(new1,new2));
     }
 
+//Code Challenge 33
+
+    @Test void joinTwoTableHappyPath(){
+        JoinHashTableImp<String , String> table1 = new JoinHashTableImp<>();
+        table1.add("first" , "Baraa");
+        table1.add("second" , "Yayha");
+        table1.add("third" , "Mohammad");
+
+        JoinHashTableImp<String , String> table2 = new JoinHashTableImp<>();
+        table2.add("first" , "new");
+        table2.add("second" , "Student");
+        table2.add("third" , "In School");
+
+        Join join=new Join();
+        assertEquals("[[second, Yayha, Student], [first, Baraa, new], [third, Mohammad, In School]]",join.leftJoinHashMaps(table1, table2).toString() );
+    }
+
+    @Test void iftheTwoTablesIsEmpty(){
+        JoinHashTableImp<String , String> table1 = new JoinHashTableImp<>();
+
+        JoinHashTableImp<String , String> table2 = new JoinHashTableImp<>();
+
+
+        Join join=new Join();
+        assertEquals("[]",join.leftJoinHashMaps(table1, table2).toString() );
+    }
+
+    @Test void iftheOneTablesIsEmpty(){
+        JoinHashTableImp<String , String> table1 = new JoinHashTableImp<>();
+        table1.add("first" , "Baraa");
+        table1.add("second" , "Yayha");
+        table1.add("third" , "Mohammad");
+
+        JoinHashTableImp<String , String> table2 = new JoinHashTableImp<>();
+
+        Join join=new Join();
+        assertEquals("[[second, Yayha, null], [first, Baraa, null], [third, Mohammad, null]]",join.leftJoinHashMaps(table1, table2).toString() );
+    }
 
 }
