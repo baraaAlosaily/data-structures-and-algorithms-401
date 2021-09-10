@@ -3,8 +3,6 @@
  */
 package hash.table;
 
-import java.util.Arrays;
-
 public class App {
     public static void main(String[] args) {
 //        HashTable<String> student=new HashTable<>(5);
@@ -44,7 +42,20 @@ public class App {
         collectWords2.treeInsersection(new1,new2);
 //        System.out.println(collectWords2.treeInsersection(new1,new2));
 
+//        codeChallenge 33:
 
+        JoinHashTableImp<String , String> table1 = new JoinHashTableImp<>();
+        table1.add("first" , "Baraa");
+        table1.add("second" , "Yayha");
+        table1.add("third" , "Mohammad");
+
+        JoinHashTableImp<String , String> table2 = new JoinHashTableImp<>();
+        table2.add("first" , "new");
+        table2.add("second" , "Student");
+        table2.add("third" , "In School");
+
+        Join join = new Join();
+        System.out.println(join.leftJoinHashMaps(table1 , table2).toString());
 
 
 
