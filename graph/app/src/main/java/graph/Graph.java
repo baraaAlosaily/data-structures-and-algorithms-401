@@ -53,11 +53,50 @@ public class Graph<T> {
             eV2.remove(v1);
     }
 
+    public List<Vertex<T>> breadthFirst(T data){
+        Vertex<T>node=new Vertex<T>(data);
+        if(node.label==null)return null;
+        List<Vertex<T>> nodes=new ArrayList<>();
+        Queue<T> breadth=new Queue<T>();
+        Set<Vertex<T>> visited= new HashSet<>();
+
+        breadth.enQueue((T) node);
+        visited.add(node);
+        while (!breadth.isEmpty()){
+            Vertex<T> front= (Vertex<T>) breadth.deQueue();
+            nodes.add(front);
+            for (Vertex<T> neighbor:getAdjVertices((String) front.label)){
+                if(!visited.contains(neighbor)){
+                    visited.add(neighbor);
+                    breadth.enQueue((T) neighbor);
+                }
+            }
+        }
+        return nodes;
+    }
+
+//    Set<String> breadthFirstTraversal(Graph graph, String root) {
+//        Set<String> visited = new LinkedHashSet<String>();
+//        Queue<String> queue = new LinkedList<String>();
+//        queue.add(root);
+//        visited.add(root);
+//        while (!queue.isEmpty()) {
+//            String vertex = queue.poll();
+//            for (Vertex v : graph.getAdjVertices(vertex)) {
+//                if (!visited.contains(v.label)) {
+//                    visited.add(v.label);
+//                    queue.add(v.label);
+//                }
+//            }
+//        }
+//        return visited;
+//    }
+
     public Set<Object> getnodes(){
         Set<Object> set=new HashSet<>();
         for (Vertex n:adjVertices.keySet()){
             set.add( n.label);
-            System.out.println(n.label);
+//            System.out.println(n.label);
         }
         return set;
     }
@@ -73,7 +112,7 @@ public class Graph<T> {
                 '}';
     }
     public int size(){
-        System.out.println(adjVertices.size());
+//        System.out.println(adjVertices.size());
         return adjVertices.size();
     }
 }

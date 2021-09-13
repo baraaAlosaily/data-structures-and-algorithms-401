@@ -21,17 +21,18 @@ public class App {
         graph.addEdge("B", "F");
         graph.addEdge("D", "F");
 
-        graph.toString();
+//        graph.toString();
+        graph.breadthFirst("A");
+        System.out.println("nnnnn"+graph.breadthFirst("C"));
+//        graph.getnodes();
+//        System.out.println(graph.getnodes());
+//
+//        System.out.println(graph.getAdjVertices());
+//        graph.getAdjVertices("A");
+//        System.out.println(graph.getAdjVertices("A"));
 
-        graph.getnodes();
-        System.out.println(graph.getnodes());
-
-        System.out.println(graph.getAdjVertices());
-        graph.getAdjVertices("A");
-        System.out.println(graph.getAdjVertices("A"));
-
-        System.out.println(Arrays.asList(graph.getAdjVertices()));
-        graph.size();
+//        System.out.println(Arrays.asList(graph.getAdjVertices()));
+//        graph.size();
 
     }
 }

@@ -91,4 +91,55 @@ class AppTest {
         Graph graph = new Graph();
         assertEquals("{}",graph.getAdjVertices().toString());
     }
+
+    // Code Challenge 36
+    //HappyPAth
+    @Test void breadthFirst(){
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("F");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "D");
+        graph.addEdge("B", "C");
+        graph.addEdge("D", "C");
+        graph.addEdge("B", "F");
+        graph.addEdge("D", "F");
+        assertEquals("[A, B, D, C, F]",graph.breadthFirst("A").toString());
+    }
+
+    @Test void iftheStackEmpty(){
+        Graph graph = new Graph();
+//        graph.addVertex("A");
+//        graph.addVertex("B");
+//        graph.addVertex("C");
+//        graph.addVertex("D");
+//        graph.addVertex("F");
+//        graph.addEdge("A", "B");
+//        graph.addEdge("A", "D");
+//        graph.addEdge("B", "C");
+//        graph.addEdge("D", "C");
+//        graph.addEdge("B", "F");
+//        graph.addEdge("D", "F");
+        assertEquals(null,graph.breadthFirst(null));
+    }
+
+    @Test void iftheStackHasOneValue(){
+        Graph graph = new Graph();
+        graph.addVertex("A");
+//        graph.addVertex("B");
+//        graph.addVertex("C");
+//        graph.addVertex("D");
+//        graph.addVertex("F");
+//        graph.addEdge("A", "B");
+//        graph.addEdge("A", "D");
+//        graph.addEdge("B", "C");
+//        graph.addEdge("D", "C");
+//        graph.addEdge("B", "F");
+//        graph.addEdge("D", "F");
+        assertEquals(null,graph.breadthFirst("A"));
+    }
 }
+
