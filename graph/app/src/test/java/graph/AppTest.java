@@ -4,7 +4,12 @@
 package graph;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class AppTest {
     //Code Challenge 30
@@ -140,6 +145,68 @@ class AppTest {
 //        graph.addEdge("B", "F");
 //        graph.addEdge("D", "F");
         assertEquals(null,graph.breadthFirst("A"));
+    }
+
+    // Code Challenge 37
+    @Test void codeChallenge37(){
+        Graph graph = new Graph();
+        graph.addVertex("Metroville");
+        graph.addVertex("Pandora");
+        graph.addVertex("Arendelle");
+        graph.addVertex("Narnia");
+        graph.addVertex("New Monstropolis");
+        graph.addweight("Metroville", "Pandora",200);
+        graph.addweight("Metroville", "Narnia",300);
+        graph.addweight("Pandora", "Arendelle",121);
+        graph.addweight("Narnia", "Arendelle",133);
+        graph.addweight("Pandora", "New Monstropolis",135);
+        graph.addweight("Narnia", "New Monstropolis",137);
+
+        List newList=new ArrayList();
+        newList.add("Metroville");
+        newList.add("Pandora");
+
+        List newList2=new ArrayList();
+        newList2.add("Metroville");
+        newList2.add("Pandora");
+        newList2.add("Arendelle");
+
+        List newList3=new ArrayList();
+        newList3.add("Metroville");
+
+       // If the trip between two cities
+        assertEquals("True, $321",graph.graphbusnisstrip(graph,newList2));
+        //If the trip between three connected cities
+        assertEquals("True, $200",graph.graphbusnisstrip(graph,newList));
+        // If the there is no trip
+        assertEquals("False, $0",graph.graphbusnisstrip(graph,newList3));
+    }
+
+    //Code Challenge 38
+
+    @Test void CodeChllenege38(){
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("F");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "D");
+        graph.addEdge("B", "C");
+        graph.addEdge("D", "C");
+        graph.addEdge("B", "F");
+        graph.addEdge("D", "F");
+        Graph graph2 = new Graph();
+        graph2.addVertex("A");
+        Graph graph3 = new Graph();
+
+        assertEquals("Graph{adjVertices={}, wieghtAdjVertices={}}", graph3.toString());
+//        assertEquals(null,graph3.dft("A").toString());
+        //if the ghraph have one value
+        assertEquals("{ A } -> NULL",graph2.dft("A").toString());
+//HappyPath
+        assertEquals("{ A } -> { D } -> { F } -> { B } -> { C } -> NULL",graph.dft("A").toString());
     }
 }
 

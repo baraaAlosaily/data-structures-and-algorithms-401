@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee4327e-1d04-4f0f-9727-7e0b6875a093" name="Changes" comment="" />
+    <list default="true" id="5ee4327e-1d04-4f0f-9727-7e0b6875a093" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/Node1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/Node2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/StackLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/app/src/main/java/graph/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/app/src/main/java/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/app/src/main/java/graph/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/app/src/main/java/graph/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/app/src/test/java/graph/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/app/src/test/java/graph/AppTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

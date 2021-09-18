@@ -23,4 +23,6 @@ hashmap-tree-intersection|[hashmap-tree-intersection](./intersection/Readme.md)|
 Hash Left Join|[Hash Left Join](./join/Readme.md)
 Graph|[Graph](./graph/Readme.md)|[code](./graph/app/src)
 Graph Breadth first|[Breadth first](./graph/breadthFirst.md)|[code](./graph/app/src)
+Business Trip|[BusinessTrip](./BusinessTrip/readme.md)|[code](./graph/app/src)
+Depth first|[Depth first](./Depthfirst/readme.md)|[code](./graph/app/src)
 
