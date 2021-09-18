@@ -3,7 +3,9 @@
  */
 package graph;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
 
@@ -15,22 +17,35 @@ public class App {
         graph.addVertex("D");
         graph.addVertex("F");
         graph.addEdge("A", "B");
+        graph.addweight("A", "B",500);
         graph.addEdge("A", "D");
+        graph.addweight("A", "D",400);
         graph.addEdge("B", "C");
+        graph.addweight("A", "C",200);
         graph.addEdge("D", "C");
+        graph.addweight("D", "C",150);
         graph.addEdge("B", "F");
+        graph.addweight("B", "F",200);
         graph.addEdge("D", "F");
+        graph.addweight("D", "F",200);
 
-//        graph.toString();
-        graph.breadthFirst("A");
-        System.out.println("nnnnn"+graph.breadthFirst("C"));
+        graph.toString();
+//        graph.breadthFirst("A");
+//        System.out.println("nnnnn"+graph.breadthFirst("C"));
 //        graph.getnodes();
 //        System.out.println(graph.getnodes());
 //
-//        System.out.println(graph.getAdjVertices());
+      graph.dft("A");
+        System.out.println(graph.dft("B"));
+        System.out.println(graph.getWieghtAdjVertices());
 //        graph.getAdjVertices("A");
 //        System.out.println(graph.getAdjVertices("A"));
-
+//
+        List newList=new ArrayList();
+        newList.add("A");
+        newList.add("E");
+        graph.graphbusnisstrip(graph,newList );
+        System.out.println(graph.graphbusnisstrip(graph,newList ));
 //        System.out.println(Arrays.asList(graph.getAdjVertices()));
 //        graph.size();
 

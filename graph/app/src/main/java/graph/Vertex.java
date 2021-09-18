@@ -5,6 +5,14 @@ import java.util.Objects;
 public class Vertex<T> {
     T label;
 
+    public T getLabel() {
+        return label;
+    }
+
+    public void setLabel(T label) {
+        this.label = label;
+    }
+
     public Vertex(T label) {
         this.label = label;
     }
